@@ -57,11 +57,12 @@ Ext.define('Ext.app.Portal', {
                         animate: true
                     },
                     items: [{
-                        html: content,
-                        title:'Navigation',
+                        //html: content,
+                        //title:'Navigation',
                         autoScroll: true,
                         border: false,
-                        iconCls: 'nav'
+                        //iconCls: 'nav'
+                        items: Ext.create('Ext.app.Hirarki'),
                     },{
                         width: 220,
                         xtype: 'datepicker',
