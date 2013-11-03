@@ -35,7 +35,7 @@ Ext.define('Ext.app.Portal', {
             items: [{
                 id: 'app-header',
                 xtype: 'box',
-                region: 'south',
+                region: 'north',
                 height: 40,
                 html: 'Ext Portal Merdeka'
             },{
@@ -47,13 +47,13 @@ Ext.define('Ext.app.Portal', {
                     title: 'Options',
                     region: 'west',
                     animCollapse: true,
-                    width: 600,
-                    minWidth: 150,
+                    width: 220,
+                    minWidth: 220,
                     maxWidth: 800,
                     split: true,
                     collapsible: true,
                     layout:{
-                        type: 'accordion',
+                        type: 'vbox',
                         animate: true
                     },
                     items: [{
@@ -63,12 +63,30 @@ Ext.define('Ext.app.Portal', {
                         border: false,
                         iconCls: 'nav'
                     },{
-                        title:'Settings',
-                        html: content,
-                        border: false,
-                        autoScroll: true,
-                        iconCls: 'settings'
+                        width: 220,
+                        xtype: 'datepicker',
+						minDate: new Date(),
+						handler: function(picker, date) {
+							// do something with the selected date
+						}
                     }]
+                }, {
+					region: 'center',
+					xtype: 'tabpanel', // TabPanel itself has no title
+					activeTab: 0,      // First tab active by default
+					items: [{
+						title: 'Data Entry',
+						closable: 'true',
+						html: 'The first tab\'s content. Others may be added dynamically'
+					},{
+						title: 'Kalender',
+						html: 'The first tab\'s content. Others may be added dynamically'
+					},{
+						title: 'Laporan',
+						html: 'The first tab\'s content. Others may be added dynamically'
+					}]
+				}]
+                /*
                 },{
                     id: 'app-portal',
                     xtype: 'portalpanel',
@@ -115,7 +133,7 @@ Ext.define('Ext.app.Portal', {
                             }
                         }]
                     }]
-                }]
+                }]*/
             }]
         });
         this.callParent(arguments);
