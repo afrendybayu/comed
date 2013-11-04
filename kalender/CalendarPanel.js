@@ -16,12 +16,12 @@ Ext.define('Ext.calendar.CalendarPanel', {
     alias: 'widget.calendarpanel',
     
     requires: [
-        'Ext.layout.container.Card',
+        //'Ext.layout.container.Card',
         'Ext.calendar.view.Day',
         'Ext.calendar.view.Week',
         'Ext.calendar.view.Month',
         'Ext.calendar.form.EventDetails',
-        'Ext.calendar.data.EventMappings'
+        //'Ext.calendar.data.EventMappings'
     ],
     
     /**
@@ -82,7 +82,7 @@ Ext.define('Ext.calendar.CalendarPanel', {
 
     // private
     layoutConfig: {
-        layoutOnCardChange: true,
+        layoutOnCardChange: false,
         deferredRender: true
     },
 

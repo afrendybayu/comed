@@ -12,16 +12,16 @@
 Ext.define('Ext.calendar.App', {
     
     requires: [
-        'Ext.Viewport',
-        'Ext.layout.container.Border',
-        'Ext.picker.Date',
-        'Ext.calendar.util.Date',
+        //'Ext.Viewport',
+        //'Ext.layout.container.Border',
+        //'Ext.picker.Date',
+        //'Ext.calendar.util.Date',
         'Ext.calendar.CalendarPanel',
-        'Ext.calendar.data.MemoryCalendarStore',
-        'Ext.calendar.data.MemoryEventStore',
+        //'Ext.calendar.data.MemoryCalendarStore',
+        //'Ext.calendar.data.MemoryEventStore',
         'Ext.calendar.data.Events',
         'Ext.calendar.data.Calendars',
-        'Ext.calendar.form.EventWindow'
+        //'Ext.calendar.form.EventWindow'
     ],
     
     constructor : function() {
@@ -47,15 +47,15 @@ Ext.define('Ext.calendar.App', {
         Ext.create('Ext.Viewport', {
             layout: 'border',
             renderTo: 'calendar-ct',
-            items: [{
+            items: [/*{
                 xtype: 'component',
                 id: 'app-header',
                 region: 'north',
-                height: 35,
+                height: 15,
                 contentEl: 'app-header-content'
-            },{
+            },*/{
                 id: 'app-center',
-                title: '...', // will be updated to the current view's date range
+                title: '...apa aja...', // will be updated to the current view's date range
                 region: 'center',
                 layout: 'border',
                 listeners: {
@@ -64,24 +64,6 @@ Ext.define('Ext.calendar.App', {
                     }
                 },
                 items: [{
-                    xtype: 'container',
-                    id:'app-west',
-                    region: 'west',
-                    width: Ext.themeName === 'neptune' ? 214 : 179,
-                    items: [{
-                        xtype: 'datepicker',
-                        id: 'app-nav-picker',
-                        cls: 'ext-cal-nav-picker',
-                        listeners: {
-                            'select': {
-                                fn: function(dp, dt){
-                                    Ext.getCmp('app-calendar').setStartDate(dt);
-                                },
-                                scope: this
-                            }
-                        }
-                    }]
-                },{
                     xtype: 'calendarpanel',
                     eventStore: this.eventStore,
                     calendarStore: this.calendarStore,
@@ -95,7 +77,7 @@ Ext.define('Ext.calendar.App', {
                         showWeekLinks: true,
                         showWeekNumbers: true
                     },
-                    
+                    /*
                     listeners: {
                         'eventclick': {
                             fn: function(vw, rec, el){
@@ -194,7 +176,9 @@ Ext.define('Ext.calendar.App', {
                             scope: this
                         }
                     }
+                    */
                 }]
+            //*/
             }]
         });
     },
@@ -275,13 +259,16 @@ Ext.define('Ext.calendar.App', {
     // This is an application-specific way to communicate CalendarPanel event messages back to the user.
     // This could be replaced with a function to do "toast" style messages, growl messages, etc. This will
     // vary based on application requirements, which is why it's not baked into the CalendarPanel.
+    /*
     showMsg: function(msg){
         Ext.fly('app-msg').update(msg).removeCls('x-hidden');
+        //Ext.fly('kalenderx').update(msg).removeCls('x-hidden');
     },
     clearMsg: function(){
         Ext.fly('app-msg').update('').addCls('x-hidden');
+        //Ext.fly('kalenderx').update('').addCls('x-hidden');
     },
-    
+    */
     // OSX Lion introduced dynamic scrollbars that do not take up space in the
     // body. Since certain aspects of the layout are calculated and rely on
     // scrollbar width, we add a special class if needed so that we can apply

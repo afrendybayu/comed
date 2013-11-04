@@ -64,12 +64,22 @@ Ext.define('Ext.app.Portal', {
                         //iconCls: 'nav'
                         items: Ext.create('Ext.appHir.Hirarki')
                     },{
-                        width: 220,
+                        //width: 220,
                         xtype: 'datepicker',
 						minDate: new Date(),
 						handler: function(picker, date) {
 							// do something with the selected date
 						}
+						/*
+						listeners: {
+                            'select': {
+                                fn: function(dp, dt){
+                                    Ext.getCmp('app-calendar').setStartDate(dt);
+                                },
+                                scope: this
+                            }
+                        }
+                        */
                     }]
                 }, {
 					region: 'center',
@@ -78,6 +88,7 @@ Ext.define('Ext.app.Portal', {
 					items: [{
 						title: 'Data Entry',
 						closable: 'true',
+						items: Ext.create('Ext.calendar.App')
 						//html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Edit Hirarki',
@@ -151,7 +162,7 @@ Ext.define('Ext.app.Portal', {
     },
 
     showMsg: function(msg) {
-        var el = Ext.get('app-msg'),
+        var el = Ext.get('app-msg-hir'),
             msgId = Ext.id();
 
         this.msgId = msgId;
@@ -162,7 +173,7 @@ Ext.define('Ext.app.Portal', {
 
     clearMsg: function(msgId) {
         if (msgId === this.msgId) {
-            Ext.get('app-msg').hide();
+            Ext.get('app-msg-hir').hide();
         }
     }
 });
