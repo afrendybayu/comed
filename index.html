@@ -5,6 +5,8 @@
     <title>Portal Layout Sample</title>
 
     <link rel="stylesheet" type="text/css" href="portal.css" />
+    <link rel="stylesheet" type="text/css" href="kalender/css/calendar.css" />
+    <link rel="stylesheet" type="text/css" href="kalender/css/examples.css" />
 
     <!-- GC -->
 
@@ -20,7 +22,7 @@
 
     <script type="text/javascript">
         Ext.Loader.setPath('Ext.appHir', 'hirarki');
-        Ext.Loader.setPath('Ext.appCal', 'calender');
+        Ext.Loader.setPath('Ext.calendar', 'kalender');
     </script>
     <script type="text/javascript" src="utama.js"></script>
     <script type="text/javascript">
@@ -30,13 +32,6 @@
             'Ext.fx.target.Element',
             'Ext.fx.target.Component',
             'Ext.window.Window',
-//            'Ext.app.Portlet',
-//            'Ext.app.PortalColumn',
-//            'Ext.app.PortalPanel',
-//            'Ext.app.Portlet',
-//            'Ext.app.PortalDropZone',
-//            'Ext.app.GridPortlet',
-//            'Ext.app.ChartPortlet'
         ]);
 
         Ext.onReady(function(){

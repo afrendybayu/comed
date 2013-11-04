@@ -1,4 +1,4 @@
-	/*
+/*
  * This calendar application was forked from Ext Calendar Pro
  * and contributed to Ext JS as an advanced example of what can 
  * be built using and customizing Ext components and templates.
@@ -9,19 +9,19 @@
  * 
  *  http://ext.ensible.com/products/calendar
  */
-Ext.define('Ext.appCal.App', {
+Ext.define('Ext.calendar.App', {
     
     requires: [
         'Ext.Viewport',
         'Ext.layout.container.Border',
         'Ext.picker.Date',
-        'Ext.appCal.util.Date',
-        'Ext.appCal.CalendarPanel',
-        'Ext.appCal.data.MemoryCalendarStore',
-        'Ext.appCal.data.MemoryEventStore',
-        'Ext.appCal.data.Events',
-        'Ext.appCal.data.Calendars',
-        'Ext.appCal.form.EventWindow'
+        'Ext.calendar.util.Date',
+        'Ext.calendar.CalendarPanel',
+        'Ext.calendar.data.MemoryCalendarStore',
+        'Ext.calendar.data.MemoryEventStore',
+        'Ext.calendar.data.Events',
+        'Ext.calendar.data.Calendars',
+        'Ext.calendar.form.EventWindow'
     ],
     
     constructor : function() {
@@ -29,14 +29,14 @@ Ext.define('Ext.appCal.App', {
         this.checkScrollOffset();
         
         // This is an example calendar store that enables event color-coding
-        this.calendarStore = Ext.create('Ext.appCal.data.MemoryCalendarStore', {
+        this.calendarStore = Ext.create('Ext.calendar.data.MemoryCalendarStore', {
             data: Ext.calendar.data.Calendars.getData()
         });
 
         // A sample event store that loads static JSON from a local file. Obviously a real
         // implementation would likely be loading remote data via an HttpProxy, but the
         // underlying store functionality is the same.
-        this.eventStore = Ext.create('Ext.appCal.data.MemoryEventStore', {
+        this.eventStore = Ext.create('Ext.calendar.data.MemoryEventStore', {
             data: Ext.calendar.data.Events.getData()
         });
         
@@ -205,7 +205,7 @@ Ext.define('Ext.appCal.App', {
     // Note that this function is called from various event handlers in the CalendarPanel above.
     showEditWindow : function(rec, animateTarget){
         if(!this.editWin){
-            this.editWin = Ext.create('Ext.appCal.form.EventWindow', {
+            this.editWin = Ext.create('Ext.calendar.form.EventWindow', {
                 calendarStore: this.calendarStore,
                 listeners: {
                     'eventadd': {

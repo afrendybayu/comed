@@ -78,14 +78,14 @@ Ext.define('Ext.app.Portal', {
 					items: [{
 						title: 'Data Entry',
 						closable: 'true',
-						html: 'The first tab\'s content. Others may be added dynamically'
+						//html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Edit Hirarki',
 						disabled: 'true',
-						html: 'The first tab\'s content. Others may be added dynamically'
+						//html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Kalender',
-						//items: Ext.create('Ext.appCal.App'),
+						//items: Ext.create('Ext.calendar.App'),
 						//html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Laporan',
