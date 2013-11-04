@@ -85,7 +85,7 @@ Ext.define('Ext.app.Portal', {
 						html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Kalender',
-						//items: Ext.create('Ext.appHir.Hirarki'),
+						//items: Ext.create('Ext.appCal.App'),
 						//html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Laporan',
