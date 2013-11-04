@@ -62,7 +62,7 @@ Ext.define('Ext.app.Portal', {
                         autoScroll: true,
                         border: false,
                         //iconCls: 'nav'
-                        items: Ext.create('Ext.app.Hirarki'),
+                        items: Ext.create('Ext.appHir.Hirarki')
                     },{
                         width: 220,
                         xtype: 'datepicker',
@@ -85,10 +85,12 @@ Ext.define('Ext.app.Portal', {
 						html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Kalender',
-						html: 'The first tab\'s content. Others may be added dynamically'
+						//items: Ext.create('Ext.appHir.Hirarki'),
+						//html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Laporan',
-						html: 'The first tab\'s content. Others may be added dynamically'
+						items: Ext.create('Ext.appHir.Hirarki'),
+						//html: 'The first tab\'s content. Others may be added dynamically'
 					}]
 				}]
                 /*
