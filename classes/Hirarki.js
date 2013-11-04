@@ -12,6 +12,7 @@ Ext.define('Ext.app.Hirarki', {
     width: 220,
     //title: 'Files',
     useArrows: true,
+    rootVisible: false,
     
     initComponent: function() {
         Ext.apply(this, {

@@ -81,7 +81,7 @@ Ext.define('Ext.app.Portal', {
 						html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Edit Hirarki',
-						disable: 'true',
+						disabled: 'true',
 						html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Kalender',
