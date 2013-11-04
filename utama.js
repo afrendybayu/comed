@@ -44,7 +44,7 @@ Ext.define('Ext.app.Portal', {
                 layout: 'border',
                 items: [{
                     id: 'app-options',
-                    title: 'Options',
+                    title: 'Hirarki',
                     region: 'west',
                     animCollapse: true,
                     width: 220,
@@ -78,6 +78,10 @@ Ext.define('Ext.app.Portal', {
 					items: [{
 						title: 'Data Entry',
 						closable: 'true',
+						html: 'The first tab\'s content. Others may be added dynamically'
+					},{
+						title: 'Edit Hirarki',
+						disable: 'true',
 						html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Kalender',
