@@ -11,11 +11,9 @@ Ext.define('Ext.appHir.Hirarki', {
         'Ext.data.*'
     ],
     xtype: 'tree-reorder',
-    
-    
+
     height: 362,
     width: 220,
-    //title: 'Files',
     useArrows: true,
     rootVisible: false,
     
@@ -30,12 +28,12 @@ Ext.define('Ext.appHir.Hirarki', {
                     //    path: 'extjs'
                     //}
                 },
-                root: {
+                /*root: {
                     text: 'Medco Energy SSE',
                     id: 'src',
                     expanded: true
-                },
-                folderSort: true,
+                },*/
+                //folderSort: true,
                 sorters: [{
                     property: 'text',
                     direction: 'ASC'

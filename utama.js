@@ -5,9 +5,7 @@
  */
 
 Ext.define('Ext.app.Portal', {
-
     extend: 'Ext.container.Viewport',
-    
 
     getTools: function(){
         return [{
@@ -90,8 +88,6 @@ Ext.define('Ext.app.Portal', {
 						title: 'Data Entry',
 						closable: 'true',
 						items: Ext.create('Ext.dataentry.DataEntry')
-						
-						//html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Edit Hirarki',
 						//disabled: 'true',

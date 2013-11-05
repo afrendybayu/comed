@@ -6,6 +6,56 @@
 
 Ext.define('Ext.dataentry.GridEntry', {
     extend: 'Ext.grid.Panel',
+    
+    requires: [
+        'Ext.selection.CellModel',
+        'Ext.grid.*',
+        'Ext.data.*',
+        'Ext.util.*',
+    ],
+    
+    //xtype: 'grouped-header-grid',
+    columnLines: true,
+    //height: 500,
+    //viewConfig: {
+    //    stripeRows: true
+    //},
+
+    initComponent: function () {
+		Ext.apply(this, {
+			//width: 675,
+			store: new Ext.data.Store({
+				//storeId:'simpsonsStore',
+				fields:['name', 'email', 'phone'],
+				//model: 'coba',
+                proxy: {
+					type: 'ajax',
+					url: 'dataentry/equip.json',
+					reader: {
+						type: 'json',
+						root: 'user',
+					}
+				},
+                //folderSort: true,
+                autoLoad: true,
+                sorters: [{
+                    property: 'name',
+                    direction: 'ASC'
+                }]
+            }),
+			columns: 
+			    [	{ header: 'No',  dataIndex: 'name' },
+					{ header: 'Equipment', dataIndex: 'email', flex: 1 },
+					{ header: 'Tgl', dataIndex: 'phone' }],
+			
+		});
+		this.callParent();
+    }
+});
+
+/*
+Ext.define('Ext.dataentry.GridEntry', {
+    extend: 'Ext.grid.Panel',
     xtype: 'grouped-header-grid',
     store: 'Companies',
     columnLines: true,
@@ -68,3 +118,4 @@ Ext.define('Ext.dataentry.GridEntry', {
         this.callParent();
     }
 });
+*/
