@@ -25,7 +25,7 @@ Ext.define('Ext.appHir.Hirarki', {
                 proxy: {
                     type: 'ajax',
                     //url: 'php/get-nodes.php',
-                    url: 'js/treegrid.json',
+                    url: 'hirarki/treegrid.json',
                     //extraParams: {
                     //    path: 'extjs'
                     //}

@@ -85,14 +85,16 @@ Ext.define('Ext.app.Portal', {
 					region: 'center',
 					xtype: 'tabpanel', // TabPanel itself has no title
 					activeTab: 0,      // First tab active by default
+					plain: true,
 					items: [{
 						title: 'Data Entry',
 						closable: 'true',
-						items: Ext.create('Ext.calendar.App')
+						items: Ext.create('Ext.dataentry.DataEntry')
+						
 						//html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Edit Hirarki',
-						disabled: 'true',
+						//disabled: 'true',
 						//html: 'The first tab\'s content. Others may be added dynamically'
 					},{
 						title: 'Kalender',
