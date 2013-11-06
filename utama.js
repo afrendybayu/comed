@@ -22,7 +22,7 @@ Ext.define('Ext.app.Portal', {
     },
 
     initComponent: function(){
-        var content = '<div class="portlet-content">'+Ext.example.shortBogusMarkup+'</div>';
+        //var content = '<div class="portlet-content">'+Ext.example.shortBogusMarkup+'</div>';
 
         Ext.apply(this, {
             id: 'app-viewport',
@@ -45,8 +45,8 @@ Ext.define('Ext.app.Portal', {
                     title: 'Hirarki',
                     region: 'west',
                     animCollapse: true,
-                    width: 220,
-                    minWidth: 220,
+                    width: 210,
+                    //minWidth: 210,
                     maxWidth: 800,
                     split: true,
                     collapsible: true,
@@ -77,7 +77,7 @@ Ext.define('Ext.app.Portal', {
                                 scope: this
                             }
                         }
-                        */
+                        //*/
                     }]
                 }, {
 					region: 'center',
@@ -86,20 +86,21 @@ Ext.define('Ext.app.Portal', {
 					plain: true,
 					items: [{
 						title: 'Data Entry',
-						closable: 'true',
+						//closable: 'true',
 						items: Ext.create('Ext.dataentry.DataEntry')
 					},{
-						title: 'Edit Hirarki',
-						//disabled: 'true',
-						//html: 'The first tab\'s content. Others may be added dynamically'
-					},{
-						title: 'Kalender',
+						title: 'Agenda & Aktivitas',
 						//items: Ext.create('Ext.calendar.App'),
-						//html: 'The first tab\'s content. Others may be added dynamically'
+						//disabled: 'true',
+					},{
+						title: 'Prestasi Mesin',
+						//items: Ext.create('Ext.calendar.App'),
+						//disabled: 'true',
 					},{
 						title: 'Laporan',
-						items: Ext.create('Ext.appHir.Hirarki'),
-						//html: 'The first tab\'s content. Others may be added dynamically'
+						items: Ext.create('Ext.appHir.Hirarki'),						
+					},{
+						title: 'Konfigurasi',
 					}]
 				}]
                 /*
