@@ -17,9 +17,9 @@ Ext.define('Ext.dataentry.GridEntry', {
     //collapsible: true,
     columnLines: true,
     //height: 470,
-    viewConfig: {
-        stripeRows: true
-    },
+    //viewConfig: {
+    //    stripeRows: true
+    //},
     
     initComponent: function () {
 		Ext.apply(this, {
