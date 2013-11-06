@@ -18,7 +18,7 @@ Ext.define('Ext.dataentry.DataEntry', {
 			xtype: 'tabpanel',
 			tabPosition: 'bottom',
 			activeTab: 0,
-			height: 601,
+			//height: 601,
             items: [{
 					title: 'Compressor',
 					items: Ext.create('Ext.dataentry.GridEntry'),

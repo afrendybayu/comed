@@ -8,26 +8,24 @@ Ext.define('Ext.dataentry.GridEntry', {
     extend: 'Ext.grid.Panel',
     
     requires: [
-        'Ext.selection.CellModel',
         'Ext.grid.*',
         'Ext.data.*',
-        'Ext.util.*',
+        //'Ext.grid.feature.Grouping'
     ],
     
-    //xtype: 'grouped-header-grid',
+    //xtype: 'grouped-grid',
+    //collapsible: true,
     columnLines: true,
-    //height: 500,
+    height: 570,
     //viewConfig: {
     //    stripeRows: true
     //},
-
+    
     initComponent: function () {
 		Ext.apply(this, {
-			//width: 675,
 			store: new Ext.data.Store({
-				//storeId:'simpsonsStore',
-				fields:['name', 'email', 'phone'],
-				//model: 'coba',
+				fields:['no','Fasility','eq','1027','1028','1029','1030','1031','1101','1102','1103','1104'],
+				groupField: 'Fasility',
                 proxy: {
 					type: 'ajax',
 					url: 'dataentry/equip.json',
@@ -44,78 +42,31 @@ Ext.define('Ext.dataentry.GridEntry', {
                 }]
             }),
 			columns: 
-			    [	{ header: 'No',  dataIndex: 'name' },
-					{ header: 'Equipment', dataIndex: 'email', flex: 1 },
-					{ header: 'Tgl', dataIndex: 'phone' }],
-			
+			    [	{ text: 'No',  dataIndex: 'no',width:36 },
+					{ header: 'Equipment',  dataIndex: 'eq', width:150 },
+					{ header: 'Oktober 2013', 
+						columns: 
+							[	{ text: '27', dataIndex: '1027', flex:1 },
+								{ text: '28', dataIndex: '1028', flex:1 },
+								{ text: '29', dataIndex: '1029', flex:1 },
+								{ text: '30', dataIndex: '1030', flex:1 },
+								{ text: '31', dataIndex: '1031', flex:1 }]},
+					{ header: 'November 2013', 
+						columns: 
+							[	{ header: '1', dataIndex: '1101', flex:1 },
+								{ header: '2', dataIndex: '1102', flex:1 },
+								{ header: '3', dataIndex: '1103', flex:1 },
+								{ header: '4', dataIndex: '1104', flex:1 },
+								{ header: '5', dataIndex: '1105', flex:1 }]},
+					{ text: 'Catatan', dataIndex: 'cat', width:200 }],
+			features: [{
+					ftype:'grouping',
+					//hideGroupedHeader: true,
+					startCollapsed: false,
+				}],
+			//resizable: true,
+			forceFit: true,
 		});
 		this.callParent();
     }
 });
-
-/*
-Ext.define('Ext.dataentry.GridEntry', {
-    extend: 'Ext.grid.Panel',
-    xtype: 'grouped-header-grid',
-    store: 'Companies',
-    columnLines: true,
-    height: 350,
-    title: 'Grouped Header Grid',
-    viewConfig: {
-        stripeRows: true
-    },
-
-    initComponent: function () {
-        this.width = 675;
-        this.columns = [{
-                text     : 'Company',
-                flex     : 1,
-                sortable : false,
-                dataIndex: 'company'
-            }, {
-                text: 'Stock Price',
-                columns: [{
-                    text     : 'Price',
-                    width    : 75,
-                    sortable : true,
-                    renderer : 'usMoney',
-                    dataIndex: 'price'
-                }, {
-                    text     : 'Change',
-                    width    : 80,
-                    sortable : true,
-                    renderer :  function(val) {
-                        if (val > 0) {
-                            return '<span style="color:green;">' + val + '</span>';
-                        } else if (val < 0) {
-                            return '<span style="color:red;">' + val + '</span>';
-                        }
-                        return val;
-                    },
-                    dataIndex: 'change'
-                }, {
-                    text     : '% Change',
-                    width    : 100,
-                    sortable : true,
-                    renderer : function(val) {
-                        if (val > 0) {
-                            return '<span style="color:green;">' + val + '</span>';
-                        } else if (val < 0) {
-                            return '<span style="color:red;">' + val + '</span>';
-                        }
-                        return val;
-                    },
-                    dataIndex: 'pctChange'
-                }]
-            }, {
-                text     : 'Last Updated',
-                width    : 115,
-                sortable : true,
-                renderer : Ext.util.Format.dateRenderer('m/d/Y'),
-                dataIndex: 'lastChange'
-            }];
-
-        this.callParent();
-    }
-});
-*/

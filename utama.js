@@ -35,7 +35,7 @@ Ext.define('Ext.app.Portal', {
                 xtype: 'box',
                 region: 'north',
                 height: 40,
-                html: 'Ext Portal Merdeka'
+                html: 'Online based Asset Monitoring & Analysis'
             },{
                 xtype: 'container',
                 region: 'center',
