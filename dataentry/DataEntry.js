@@ -38,8 +38,8 @@ Ext.define('Ext.dataentry.DataEntry', {
 				//*/
 			},{
 				title: 'Daftar Kegagalan Alat',
-				items: Ext.create('Ext.dataentry.DafGal'),
-				//html: 'Page Title 1<br/>Page Title 2<br/>Page Title 3<br/>Page Title 4<br/>Page Title 5<br/>',
+				//items: Ext.create('Ext.dataentry.DafGal'),
+				html: 'Page Title 1<br/>Page Title 2<br/>Page Title 3<br/>Page Title 4<br/>Page Title 5<br/>',
 			}]
 		});
         this.callParent();
